@@ -58,3 +58,13 @@ The following packages were added:
   com.unity.lego.materials@3.0.0
   com.unity.lego.modelimporter@8.0.1
   com.unity.settings-manager@1.0.3
+
+=== Fri Nov 10 14:26:44 2023
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.cinemachine from version 2.8.4 to 2.8.6
+  com.unity.learn.iet-framework from version 2.1.2 to 2.2.2
+  com.unity.settings-manager from version 1.0.3 to 2.0.1
