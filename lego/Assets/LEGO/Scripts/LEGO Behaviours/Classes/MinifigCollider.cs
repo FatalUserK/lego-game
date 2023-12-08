@@ -32,6 +32,8 @@ namespace Unity.LEGO.Behaviours
 
         MinifigController m_MinifigController;
 
+        RidingMinifigController m_RidingMinifigController;
+
         Vector3? m_PreviousAbovePosition;
         Vector3? m_PreviousBelowPosition;
 
@@ -204,16 +206,19 @@ namespace Unity.LEGO.Behaviours
 
         void BreakMinifig()
         {
-            m_MinifigController.Explode();
-
-            if (gameObject.CompareTag("Player"))
+            if (m_RidingMinifigController.mounted)
             {
-                GameOverEvent evt = Events.GameOverEvent;
-                evt.Win = false;
-                EventManager.Broadcast(evt);
-            }
+                m_MinifigController.Explode();
 
-            Destroy(this);
+                if (gameObject.CompareTag("Player"))
+                {
+                    GameOverEvent evt = Events.GameOverEvent;
+                    evt.Win = false;
+                    EventManager.Broadcast(evt);
+                }
+
+                Destroy(this);
+            }
         }
 
         void OnControllerColliderHit(ControllerColliderHit hit)

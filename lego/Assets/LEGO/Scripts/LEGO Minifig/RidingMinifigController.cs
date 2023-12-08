@@ -268,9 +268,12 @@ namespace Unity.LEGO.Minifig
             this.onSpecialComplete = onSpecialComplete;
         }
 
+
+        public bool mounted = true;
+
         public override void Explode()
         {
-            if (!exploded)
+            if (!exploded && mounted)
             {
                 exploded = true;
 
